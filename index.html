@@ -32,9 +32,11 @@
     </div>
 
     <form method="post" action="https://yahoo.co.jp" name="sidebar_form" accept-charset="Shift-JIS" onsubmit="return false;" target="_blank">
-        <input name="pid" value="488402" type="hidden">
-        <input name="pname" value="テスト　開発企業様（削除不可）" id="pname" type="hidden">
-        <a href="javascript:void(0);" onclick="org=document.charset; document.charset='Shift-JIS'; document.sidebar_form.submit(); document.charset=org;">適性診断<br></a>
+        <a href="javascript:void(0);" onclick="org=document.charset; document.charset='Shift-JIS'; document.sidebar_form.submit(); document.charset=org;">form targetあり<br></a>
+    </form>
+
+    <form method="post" action="https://yahoo.co.jp" name="sidebar_form2" accept-charset="Shift-JIS" onsubmit="return false;" target="_blank">
+        <a href="javascript:void(0);" onclick="org=document.charset; document.charset='Shift-JIS'; document.sidebar_form.submit(); document.charset=org;">form targetなし<br></a>
     </form>
 
 </body>
