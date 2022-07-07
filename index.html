@@ -4,6 +4,16 @@
 <title>HTMLの練習</title>
 </head>
 <body>
-私の初めてのWebページです。
+    <form action="https://yahoo.co.jp" method="post" target="_blank">
+        <p>form target blank あり： <input type="text" name="sampleInput"></p>
+        <p><input type="submit" value="送信"></p>
+    </form>
+
+    <form action="https://yahoo.co.jp" method="post">
+        <p>form target blank なし <input type="text" name="sampleInput"></p>
+        <p><input type="submit" value="送信"></p>
+    </form>
+
+    <p><a href="https://yahoo.co.jp" target="_blank">a target blank あり　新しいウィンドウで表示します</a></p>
 </body>
 </html>
