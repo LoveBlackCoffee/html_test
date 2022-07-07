@@ -14,30 +14,28 @@
     </script>
 
     <form action="https://yahoo.co.jp" method="post" target="_blank">
-        <p>form target blank あり： <input type="text" name="sampleInput"></p>
-        <p><input type="submit" value="送信"></p>
+        <p><input type="submit" value="form target blank あり"></p>
     </form>
 
     <form action="https://yahoo.co.jp" method="post">
-        <p>form target blank なし <input type="text" name="sampleInput"></p>
-        <p><input type="submit" value="送信"></p>
+        <p><input type="submit" value="form target blank なし"></p>
+    </form>
+
+    <form method="post" action="https://yahoo.co.jp" name="sidebar_form" onsubmit="return false;" target="_blank">
+        <a href="javascript:void(0);" onclick="org=document.charset; document.sidebar_form.submit(); document.charset=org;">form targetあり<br></a>
+    </form>
+
+    <form method="post" action="https://yahoo.co.jp" name="sidebar_form2" onsubmit="return false;">
+        <a href="javascript:void(0);" onclick="org=document.charset; document.sidebar_form.submit(); document.charset=org;">form targetなし<br></a>
     </form>
 
     <p><a href="https://yahoo.co.jp" target="_blank">aタグ target blank あり　新しいウィンドウで表示します</a></p>
 
     <p><a href="https://yahoo.co.jp">aタグ target blank なし　新しいウィンドウで表示します</a></p>
 
-    <div>
+    <p>
         <input type="button" value="window.open" onClick="openWin()">　　
-    </div>
-
-    <form method="post" action="https://yahoo.co.jp" name="sidebar_form" accept-charset="Shift-JIS" onsubmit="return false;" target="_blank">
-        <a href="javascript:void(0);" onclick="org=document.charset; document.charset='Shift-JIS'; document.sidebar_form.submit(); document.charset=org;">form targetあり<br></a>
-    </form>
-
-    <form method="post" action="https://yahoo.co.jp" name="sidebar_form2" accept-charset="Shift-JIS" onsubmit="return false;">
-        <a href="javascript:void(0);" onclick="org=document.charset; document.charset='Shift-JIS'; document.sidebar_form.submit(); document.charset=org;">form targetなし<br></a>
-    </form>
+    </p>
 
 </body>
 </html>
