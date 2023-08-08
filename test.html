@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>フォーカスチェック</title>
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #log {
+            border: 1px solid #000;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p id="log" style="background: silver;">document.hasFocus(): false</p>
+    </div>
+
+    <script>
+        const body = document.querySelector("body");
+        const log = document.getElementById("log");
+        function checkDocumentFocus() {
+            log.textContent = "document.hasFocus(): " + document.hasFocus();
+            if (document.hasFocus()) {
+                log.style.background = "white";
+            } else {
+                log.style.background = "silver";
+            }
+        }
+        setInterval(checkDocumentFocus, 300);
+    </script>
+
+    <deepl-input-controller></deepl-input-controller>
+</body>
+
+</html>
