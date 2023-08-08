@@ -16,13 +16,19 @@
             border: 1px solid #000;
             padding: 1em;
         }
+
+        /* .test123 {
+            width: 0;
+            overflow: hidden;
+        } */
     </style>
 </head>
 
-<body>
-    <div class="container" name="test_div">
-        <p id="log" style="background: silver;">document.hasFocus(): false</p>
-    </div>
+<body onLoad="document.form1.field1.focus()">
+    <p id="log" style="background: silver;">document.hasFocus(): false</p>
+    <form action="#" name="form1">
+        <p>お名前：<input type="text" name="field1" size="25"></p>
+    </form>
 
     <script>
         const body = document.querySelector("body");
@@ -36,10 +42,6 @@
             }
         }
         setInterval(checkDocumentFocus, 300);
-
-        window.onload = function () {// 実行したい処理
-            document.getElementById("test_div").focus();
-        }
     </script>
 
     <deepl-input-controller></deepl-input-controller>
