@@ -20,8 +20,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <p id="log" style="background: silver;" autofocus>document.hasFocus(): false</p>
+    <div class="container" name="test_div">
+        <p id="log" style="background: silver;">document.hasFocus(): false</p>
     </div>
 
     <script>
@@ -36,6 +36,10 @@
             }
         }
         setInterval(checkDocumentFocus, 300);
+
+        window.onload = function () {// 実行したい処理
+            document.getElementById("test_div").focus();
+        }
     </script>
 
     <deepl-input-controller></deepl-input-controller>
