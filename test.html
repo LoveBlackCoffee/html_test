@@ -17,18 +17,19 @@
             padding: 1em;
         }
 
-        /* .test123 {
-            width: 0;
-            overflow: hidden;
-        } */
+        html,
+        body {
+            -webkit-overflow-scrolling: touch !important;
+            overflow: auto !important;
+            height: 100% !important;
+        }
     </style>
 </head>
 
-<body onLoad="document.form1.field1.focus()">
-    <p id="log" style="background: silver;">document.hasFocus(): false</p>
-    <form action="#" name="form1">
-        <p>お名前：<input type="text" name="field1" size="25"></p>
-    </form>
+<body>
+    <div class="container" id="result">
+        <p id="log" style="background: silver;">document.hasFocus(): false</p>
+    </div>
 
     <script>
         const body = document.querySelector("body");
