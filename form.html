@@ -58,14 +58,15 @@
 
                 // ここで必要な処理を実行（例: サーバーにログイン情報を送信するなど）
                 var http = new XMLHttpRequest();
-                http.open("GET", "http://www.yahoo.co.jp", true);
+                var data = { "username": username, "password": password };
+                http.open("POST", "/");
                 http.responseType = "blob";
                 http.onload = function (e) {
                     if (this.status == 200 || this.status === 0) {
                         callback(this.response)
                     }
                 };
-                http.send()
+                http.send(EncodeHTMLForm(data))
 
                 // ここに追加のJavaScript処理を書くことができます
                 // 例えば、別のページにリダイレクトする、アラートを表示するなど
