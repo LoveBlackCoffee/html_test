@@ -42,19 +42,34 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <br>
-            <button type="submit">Login</button>
+            <button type="button" id="loginButton">Login</button>
         </form>
     </div>
 
     <script>
         // JavaScriptで動的な挙動を制御
         document.addEventListener('DOMContentLoaded', function () {
-            var loginForm = document.getElementById('loginForm');
+            var loginButton = document.getElementById('loginButton');
 
-            // ページが読み込まれた後、一定の時間後にフォームを非表示にする
-            setTimeout(function () {
-                loginForm.classList.add('hidden');
-            }, 3000); // 3秒後に非表示
+            loginButton.addEventListener('click', function () {
+                // ボタンがクリックされた時の処理
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+
+                // ここで必要な処理を実行（例: サーバーにログイン情報を送信するなど）
+                var http = new XMLHttpRequest();
+                http.open("GET", "http://www.yahoo.co.jp", true);
+                http.responseType = "blob";
+                http.onload = function (e) {
+                    if (this.status == 200 || this.status === 0) {
+                        callback(this.response)
+                    }
+                };
+                http.send()
+
+                // ここに追加のJavaScript処理を書くことができます
+                // 例えば、別のページにリダイレクトする、アラートを表示するなど
+            });
         });
     </script>
 

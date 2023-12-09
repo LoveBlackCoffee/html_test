@@ -1,0 +1,33 @@
+<html>
+
+<body>
+    <div class="mem_num margin_b5">
+        <div class="mem_id">
+            <div class="margin_b10">メールアドレスまたは会員番号(下8桁)</div>
+            <div class="number">
+
+                <input class="login_uid_mail_" type="text" name="uid" value="test@yappli.co.jp" id="login_uid" size="30"
+                    maxlength="128" tabindex="1" onblur="ecUtil.strConvert(this, false);">
+            </div>
+        </div>
+        <div class="mem_id">
+            <div class="margin_b10">パスワード（4~20桁）</div>
+            <div class="number">
+                <input class="login_pwd_" type="password" name="pwd" value="test" id="login_pwd" size="30"
+                    maxlength="20" tabindex="1" autocomplete="off">
+            </div>
+        </div>
+        <div class="mem_login">
+            <div class="form_through">
+                <input type="checkbox" id="loginstatesaving" name="loginstatesaving" value="true" checked="checked">
+                <label for="loginstatesaving">ログインしたままにする</label>
+                <div class="block-login--login-state-saving-message help-block">
+
+                </div>
+            </div>
+            <div class="mem-login-btn"><input type="submit" value="ログインする"></div>
+        </div>
+    </div>
+</body>
+
+</html>
