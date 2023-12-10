@@ -59,11 +59,11 @@
                 // ここで必要な処理を実行（例: サーバーにログイン情報を送信するなど）
                 var http = new XMLHttpRequest();
                 var send_data = { "username": username, "password": password };
-                http.open("POST", "./form.html");
+                http.open("GET", "./form.html", true);
                 http.responseType = "blob";
                 http.onload = function (e) {
                     if (this.status == 200 || this.status === 0) {
-                        callback(this.response)
+
                     }
                 };
                 http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -77,7 +77,7 @@
                     urlPairs.push(p_key + '=' + p_value);
                 }
                 let send_params = urlPairs.join('&');
-                http.send(send_params)
+                http.send()
 
                 // ここに追加のJavaScript処理を書くことができます
                 // 例えば、別のページにリダイレクトする、アラートを表示するなど
