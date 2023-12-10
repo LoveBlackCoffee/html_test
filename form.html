@@ -62,6 +62,7 @@
                 http.open("POST", "./form.html", true);
                 http.responseType = "json";
                 http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                let urlPairs = [];
                 for (key_in in send_data) {
 
                     // キーと値をそれぞれエンコードをして取得する
