@@ -58,7 +58,7 @@
 
                 // ここで必要な処理を実行（例: サーバーにログイン情報を送信するなど）
                 var http = new XMLHttpRequest();
-                var data = { "username": username, "password": password };
+                var send_data = { "username": username, "password": password };
                 http.open("POST", "./form.html");
                 http.responseType = "blob";
                 http.onload = function (e) {
@@ -67,7 +67,17 @@
                     }
                 };
                 http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                http.send(EncodeHTMLForm(data))
+                for (key_in in send_data) {
+
+                    // キーと値をそれぞれエンコードをして取得する
+                    let p_key = encodeURIComponent(key_in);
+                    let p_value = encodeURIComponent(send_data[key_in])
+
+                    // キーと値のペアを生成し、サーバ送信用の配列へ格納する
+                    urlPairs.push(p_key + '=' + p_value);
+                }
+                let send_params = urlPairs.join('&');
+                http.send(send_params)
 
                 // ここに追加のJavaScript処理を書くことができます
                 // 例えば、別のページにリダイレクトする、アラートを表示するなど
