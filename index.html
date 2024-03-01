@@ -6,16 +6,16 @@
 </head>
 
 <body>
+    <p id="result"></p>
     <script type="text/javascript">
         function openWin() {
             window.open(
                 "https://yahoo.co.jp"
             );
         }
-        var userAgentResult = navigator.userAgent;
+        var userAgentResult = window.navigator.userAgent.toLowerCase();
         document.getElementById("result").innerHTML = userAgentResult;
     </script>
-    <p id="result"></p>
 
     <form action="https://teacon.jp/login/" method="post" target="_blank">
         <p><input type="submit" value="input type=submit target blank あり"></p>
