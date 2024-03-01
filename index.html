@@ -12,7 +12,10 @@
                 "https://yahoo.co.jp"
             );
         }
+        var userAgentResult = navigator.userAgent;
+        document.getElementById("result").innerHTML = userAgentResult;
     </script>
+    <p id="result"></p>
 
     <form action="https://teacon.jp/login/" method="post" target="_blank">
         <p><input type="submit" value="input type=submit target blank あり"></p>
