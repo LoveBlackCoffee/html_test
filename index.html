@@ -13,6 +13,9 @@
                 "https://yahoo.co.jp"
             );
         }
+        function read_TextArea(form) {
+            alert(form.myarea.value);
+        }
         var userAgentResult = window.navigator.userAgent.toLowerCase();
         document.getElementById("result").innerHTML = userAgentResult;
     </script>
@@ -151,7 +154,10 @@
     <p>
         <a href="native:/action/restart">restart</a>
     </p>
-    </p>
+    <FORM NAME="frm">
+        <INPUT TYPE="button" NAME="button3" Value="Alert Me!" onClick="read_TextArea(this.form)">
+        <input type=text NAME="myarea" size=50>
+    </FORM>
 </body>
 
 </html>
