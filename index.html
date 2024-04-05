@@ -14,8 +14,37 @@
             );
         }
         function read_TextArea(form) {
+            const array = [1, 2, "a"];
+            webkit.messageHandlers.callbackHandler.postMessage(array);
             alert(form.myarea.value);
         }
+        const showAlert = () => {
+            alert('アラートです。');
+        };
+
+        const showConfirm = () => {
+            confirm('確認ダイアログです。');
+        };
+
+        const showPrompt = () => {
+            prompt('入力してください。');
+        };
+
+        const sendMessage = () => {
+            const dic = {
+                name: "John",
+                age: 30
+            }
+            webkit.messageHandlers.callbackHandler.postMessage(dic);
+        };
+
+        const showLocalMessage = (message) => {
+            alert(message)
+        };
+
+        const getFromUserDefautls = () => {
+            webkit.messageHandlers.userDefaultsHandler.postMessage("");
+        };
         var userAgentResult = window.navigator.userAgent.toLowerCase();
         document.getElementById("result").innerHTML = userAgentResult;
     </script>
@@ -158,6 +187,11 @@
         <INPUT TYPE="button" NAME="button3" Value="Alert Me!" onClick="read_TextArea(this.form)">
         <input type=text NAME="myarea" size=50>
     </FORM>
+    <button onclick="showAlert()">alert</button>
+    <button onclick="showConfirm()">confirm</button>
+    <button onclick="showPrompt()">prompt</button>
+    <button onclick="sendMessage()">ネイティブにメッセージを送信</button>
+    <button onclick="getFromUserDefautls()">UserDefaultsからデータを取得</button>
 </body>
 
 </html>
